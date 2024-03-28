@@ -41,7 +41,7 @@ class Application(tk.Tk):
 
         # Ex3 Change the background color of the canvas
         # Hint: change argument of GUICanvas
-        self.canvas = GUICanvas(content, background = "white", width=680, height=400, borderwidth=2)
+        self.canvas = GUICanvas(content, background = None, width=680, height=400, borderwidth=2)
         self.canvas.grid(column=0, row=0, columnspan=2)
 
 
@@ -55,9 +55,9 @@ class Application(tk.Tk):
         # Ex4 Specify the position of speedometer to the first column and
         #     second row
         #
-        # Hint: Python index start with zero (0)
+        # Hint: Python number count start with zero (0)
         #       To assign the widget to the second column and third row,
-        #       set column=3 (not 2)
+        #       set column=1 (not 2) and row=2 (not 3)
         speedometer.grid(column=None, row=None)
 
         # Ex5 Set the maximum rotation speed to 30 degrees/second
@@ -83,6 +83,7 @@ class Application(tk.Tk):
         #       ("c" is a variable), set the value of color to c
         #
         #       color = c
+        #
         airplane = GAirplane((340,200), airplane_speed, airplane_heading, color=None)
         self.map = GImage("map.jpg")
 
