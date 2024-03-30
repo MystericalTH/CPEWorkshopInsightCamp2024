@@ -37,12 +37,13 @@ class GImage(GraphicsObject):
         return self.image
 
 class GAirplane(GraphicsObject):
-    def __init__(self, origin, speed, direction):
+    def __init__(self, origin, speed, direction, color):
         super().__init__()
         self._speed = speed
         self._direction = direction
         self._x = origin[0]
         self._y = origin[1]
+        self.color = color
         points = [
             (0,0),
             (2,2),
@@ -83,4 +84,4 @@ class GAirplane(GraphicsObject):
         self._update_position()
         canvas.delete("airplane")
         points = self._translate(self._rotate(self._direction, self.points), self._x, self._y)
-        canvas.create_polygon(points, outline="white", width=2, fill="red", tags=("airplane",))
+        canvas.create_polygon(points, outline="white", width=2, fill=self.color, tags=("airplane",))
