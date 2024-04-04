@@ -9,7 +9,17 @@ from tkinter import DoubleVar, IntVar
 class Application(tk.Tk):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
+        
+        # Tutorial Example 1
+        # Set the value of x to 50
+        
+        x = None
+        
+        # Tutorial Example 2
+        # Store the smallest value between the variable x and 10 in the variable y
+        
+        y = min(None, None)
+        
         # Ex1 Set the title of the window to "Airplane Simulation"
         self.title(None)                                    #TODO
 
