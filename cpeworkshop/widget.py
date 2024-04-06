@@ -58,9 +58,17 @@ class Speedometer(tk.Frame):
         needle_y = 150 + 100 * math.sin(angle_rad)
 
         self.canvas.coords(self.needle, 150, 150, needle_x, needle_y)
+        
+    def grid(self, **kwargs):
+        if kwargs["column"] is not None and kwargs["row"] is not None:
+            super().grid(**kwargs)
+        else:
+            print("WARNING: Invalid grid position. Speedometer not shown.")
 
-class HeadingIndicatorGUI(tk.Frame):
-    def __init__(self, master, heading_var, max_rotation=30, **kwargs):
+class HeadingIndicator(tk.Frame):
+    def __init__(self, master, heading_var, max_rotation, **kwargs):
+        if max_rotation is None:
+            max_rotation = 0
         super().__init__(master, **kwargs)
 
         self.canvas = tk.Canvas(self, width=300, height=270)
@@ -81,6 +89,12 @@ class HeadingIndicatorGUI(tk.Frame):
         self.draw_plane()
 
         self.rotate_direction_markers(0)
+
+    def grid(self, **kwargs):
+        if kwargs["column"] is not None and kwargs["row"] is not None:
+            super().grid(**kwargs)
+        else:
+            print("WARNING: Invalid grid position. Heading Indicator not shown.")
 
     def draw_circle(self):
         # Draw circle

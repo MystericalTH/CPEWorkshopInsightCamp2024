@@ -29,10 +29,15 @@ class GraphicsObject(object):
 
 class GImage(GraphicsObject):
     def __init__(self, imagepath):
-        self.image = ImageTk.PhotoImage(Image.open(imagepath).resize((1020, 600)))
+        try:
+            self.image = ImageTk.PhotoImage(Image.open(imagepath).resize((1020, 600)))
+        except:
+            self.image = None
+            print("WARNING: Error loading image")
 
     def draw(self, canvas):
         canvas.create_image(0, 0, anchor="nw", image=self.image)
+        
     def get_image(self):
         return self.image
 
