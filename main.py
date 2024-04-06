@@ -74,13 +74,13 @@ class Application(tk.Tk):
         speedometer.grid(column=None, row=None)             #TODO Ex4
 
 
-        # Ex5 Set the maximal rotation speed to 30 degrees/second
+        # Ex5 Set the maximum rotation speed to 30 degrees/second
         # 
         # Hint: To set the maximum rotation speed to m degrees/second
         #       ("m" is a variable), set the value of max_rotation to m
         #
         #       ...
-        #       max_rotation = 10 # this sets the maximal rotation speed 
+        #       max_rotation = 10 # this sets the maximum rotation speed 
         #       ...               # to 10 degrees/second
         # 
 
